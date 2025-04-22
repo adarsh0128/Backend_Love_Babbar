@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 require("dotenv").config();
 
-const dbConnect = () => {
+exports.connect = () => {
   mongoose
     .connect(process.env.MONGODB_URL)
     .then(() => {
@@ -14,5 +14,3 @@ const dbConnect = () => {
       process.exit(1);
     });
 };
-
-module.exports = dbConnect;
